@@ -1,0 +1,27 @@
+#M10P1
+def compute_forecast(month, sales):
+    if month == "Jan" or month == "Feb" or month == "Mar":
+        forecast_percent = 0.10
+    elif month == "Apr" or month == "May" or month == "Jun":
+        forecast_percent = 0.15
+    elif month == "Jul" or month == "Aug" or month == "Sep":
+        forecast_percent = 0.20
+    else:
+        forecast_percent = 0.25
+    next_month_sales = sales * (1 + forecast_percent)
+    return next_month_sales
+choice = "Yes"
+while choice == "Yes":
+    last_name = input("Enter last name: ")
+    month = input("Enter month (Jan-Dec): ")
+    sales = float(input("Enter sales: "))
+    forecast_sales = compute_forecast(month, sales)
+    print()
+    print("Sales Forecast")
+    print("--------------")
+    print(f"Last Name: {last_name}")
+    print(f"Month: {month}")
+    print(f"Current Sales: ${sales:.2f}")
+    print(f"Forecast Sales: ${forecast_sales:.2f}")
+    print()
+    choice = input("Do you want to enter another record? (Yes or No): ")

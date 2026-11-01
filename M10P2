@@ -1,0 +1,18 @@
+#M10P2
+def compute_wall_sqft(length, width, height):
+    wall_sqft = (2 * length * height) + (2 * width * height)
+    return wall_sqft
+choice = "Yes"
+while choice == "Yes":
+    length = float(input("Enter length: "))
+    width = float(input("Enter width: "))
+    height = float(input("Enter height: "))
+    wall_sqft = compute_wall_sqft(length, width, height)
+    gallons_needed = wall_sqft / 50
+    print()
+    print("Paint Estimate")
+    print("--------------")
+    print(f"Wall Square Footage: {wall_sqft:.2f}")
+    print(f"Gallons Needed: {gallons_needed:.2f}")
+    print()
+    choice = input("Do you want to enter another room? (Yes or No): ")
